@@ -4,12 +4,20 @@ public class InsertionSort {
 	/**
 	 * insertionSort			sorts an array of integers using insertion sort
 	 * 
-	 * @param unsortedArray		an unsorted array of integers
+	 * @param array		an unsorted array of integers
 	 * @return					the input array, sorted least to greatest
 	 */
-	public static int[] insertionSort(int[] unsortedArray) {
-		//TODO: S2 implements insertion sort
-		
-		return null;
-	}
+  public static int[] insertionSort(int array[]) {
+    int len = array.length;
+    for (int i=1; i<len; i++) {
+      int n = array[i];
+      int j = i-1;
+      while ((j>=0) && (array[j]>n)) {
+        array[j+1] = array[j];
+        j--;
+      }
+      array[j+1] = n;
+    }
+    return array;
+  }
 }
